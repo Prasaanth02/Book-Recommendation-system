@@ -158,7 +158,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Having trouble with the Book Recommendation System? Here's how to get help:
 
 1. **Check the README** - Most common questions are answered in this document
-2. **Contact the Developer** - Email me at [your-email@example.com](mailto:your-email@example.com)
+2. **Contact the Developer** - Email me at [your-email@example.com](mailto:prasaanthhari02@gmail.com)
 3. **Report Issues** - If you find a bug, please report it by [creating an issue](https://github.com/Prasaanth02/Book-Recommendation-system/issues)
 
 ---
