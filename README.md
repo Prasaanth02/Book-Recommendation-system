@@ -2,9 +2,7 @@
 
 A colorful, interactive web application that recommends books based on your current mood. Built with HTML, CSS, and JavaScript.
 
-**[🌐 Try the Live Demo](https://prasaanth02.github.io/Book-Recommendation-System/)** - Experience the application directly in your browser!
-
-![Book Recommendation System](https://raw.githubusercontent.com/Prasaanth02/Book-Recommendation-System/main/screenshots/main_screen.png)
+**[🌐 Try the Live Demo](https://prasaanth02.github.io/Book-Recommendation-system/)** - Experience the application directly in your browser!
 
 ## Features
 
@@ -33,7 +31,7 @@ The system offers recommendations based on these moods, each with its own color 
 ### Online Version
 The easiest way to use the Book Recommendation System is through the online version:
 
-**[🌐 Access the Book Recommendation System](https://Prasaanth02.github.io/Book-Recommendation-System/)**
+**[🌐 Access the Book Recommendation System](https://prasaanth02.github.io/Book-Recommendation-system/)**
 
 This version runs directly in your browser with no installation required!
 
