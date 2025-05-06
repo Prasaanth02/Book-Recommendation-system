@@ -1,0 +1,646 @@
+/* Global Styles */
+:root {
+    --primary-color: #4a7abc;
+    --primary-dark: #2a5a9c;
+    --light-bg: #f0f0f0;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --danger: #ff6b6b;
+    --success: #4CAF50;
+    
+    /* Mood Colors */
+    --happy-primary: #FFD700;
+    --happy-secondary: #FFEB99;
+    --happy-text: #8B4513;
+    
+    --sad-primary: #6495ED;
+    --sad-secondary: #B0C4DE;
+    --sad-text: #00008B;
+    
+    --excited-primary: #FF4500;
+    --excited-secondary: #FFA07A;
+    --excited-text: #8B0000;
+    
+    --relaxed-primary: #98FB98;
+    --relaxed-secondary: #DCFCDC;
+    --relaxed-text: #006400;
+    
+    --curious-primary: #9370DB;
+    --curious-secondary: #D8BFD8;
+    --curious-text: #4B0082;
+    
+    --adventurous-primary: #20B2AA;
+    --adventurous-secondary: #AFEEEE;
+    --adventurous-text: #008080;
+    
+    --inspired-primary: #FF69B4;
+    --inspired-secondary: #FFC0CB;
+    --inspired-text: #8B008B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, #3a5a8c, #4a7abc, #6495ED);
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-btn {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background-color: #e6e6e6;
+    color: var(--primary-dark);
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Mood Selection Styles */
+.mood-selection {
+    margin-bottom: 30px;
+}
+
+.mood-container {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.mood-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+}
+
+.mood-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.mood-btn {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+/* Mood-specific button styles */
+.mood-btn[data-mood="Happy 😊"] {
+    background-color: var(--happy-primary);
+    color: var(--happy-text);
+}
+
+.mood-btn[data-mood="Happy 😊"]:hover,
+.mood-btn[data-mood="Happy 😊"].selected {
+    background-color: var(--happy-secondary);
+}
+
+.mood-btn[data-mood="Sad 😢"] {
+    background-color: var(--sad-primary);
+    color: var(--sad-text);
+}
+
+.mood-btn[data-mood="Sad 😢"]:hover,
+.mood-btn[data-mood="Sad 😢"].selected {
+    background-color: var(--sad-secondary);
+}
+
+.mood-btn[data-mood="Excited 🤩"] {
+    background-color: var(--excited-primary);
+    color: var(--excited-text);
+}
+
+.mood-btn[data-mood="Excited 🤩"]:hover,
+.mood-btn[data-mood="Excited 🤩"].selected {
+    background-color: var(--excited-secondary);
+}
+
+.mood-btn[data-mood="Relaxed 😌"] {
+    background-color: var(--relaxed-primary);
+    color: var(--relaxed-text);
+}
+
+.mood-btn[data-mood="Relaxed 😌"]:hover,
+.mood-btn[data-mood="Relaxed 😌"].selected {
+    background-color: var(--relaxed-secondary);
+}
+
+.mood-btn[data-mood="Curious 🧐"] {
+    background-color: var(--curious-primary);
+    color: var(--curious-text);
+}
+
+.mood-btn[data-mood="Curious 🧐"]:hover,
+.mood-btn[data-mood="Curious 🧐"].selected {
+    background-color: var(--curious-secondary);
+}
+
+.mood-btn[data-mood="Adventurous 🧗"] {
+    background-color: var(--adventurous-primary);
+    color: var(--adventurous-text);
+}
+
+.mood-btn[data-mood="Adventurous 🧗"]:hover,
+.mood-btn[data-mood="Adventurous 🧗"].selected {
+    background-color: var(--adventurous-secondary);
+}
+
+.mood-btn[data-mood="Inspired ✨"] {
+    background-color: var(--inspired-primary);
+    color: var(--inspired-text);
+}
+
+.mood-btn[data-mood="Inspired ✨"]:hover,
+.mood-btn[data-mood="Inspired ✨"].selected {
+    background-color: var(--inspired-secondary);
+}
+
+/* Results Container Styles */
+.results-container {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 400px;
+}
+
+/* Welcome View Styles */
+.welcome-view {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.emoji-container {
+    margin-bottom: 20px;
+}
+
+.welcome-emoji {
+    font-size: 72px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+.welcome-view h2 {
+    font-size: 28px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.welcome-view p {
+    font-size: 18px;
+    color: var(--text-dark);
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+
+/* Recommendations View Styles */
+.recommendations-view {
+    padding: 10px 0;
+}
+
+.recommendations-header {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recommendations-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Books Container Styles */
+.books-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-card {
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+}
+
+.book-color-bar {
+    width: 8px;
+}
+
+.book-content {
+    flex: 1;
+    padding: 20px;
+    position: relative;
+}
+
+.book-number {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book-author {
+    font-style: italic;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.book-description {
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.save-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Saved Books View Styles */
+.saved-books-header {
+    background: linear-gradient(to bottom, #3a5a8c, #4a7abc);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+}
+
+.saved-books-header h2 {
+    font-size: 24px;
+}
+
+.saved-books-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.saved-book-card {
+    background-color: var(--white);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.saved-book-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.book-number-label {
+    background-color: #a0c8e2;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.mood-label {
+    background-color: #e6e6e6;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.saved-book-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 10px 0 5px;
+}
+
+.saved-book-author {
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.saved-book-description {
+    background-color: #e6e6e6;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.book-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+}
+
+.rating-label {
+    margin-right: 10px;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    font-size: 24px;
+    cursor: pointer;
+    color: #dddddd;
+    transition: color 0.2s;
+}
+
+.star.filled {
+    color: #ffcc00;
+}
+
+.star:hover {
+    color: #ffaa00;
+}
+
+.remove-btn {
+    background-color: var(--danger);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #ff5252;
+}
+
+.no-saved-books {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.secondary-btn {
+    background-color: #e6e6e6;
+    color: var(--text-dark);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.secondary-btn:hover {
+    background-color: #d6d6d6;
+}
+
+.danger-btn {
+    background-color: var(--danger);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.danger-btn:hover {
+    background-color: #ff5252;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: var(--white);
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e6e6e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    font-size: 20px;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: var(--text-dark);
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.settings-section {
+    margin-bottom: 25px;
+}
+
+.settings-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.location-display {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 10px 0 15px;
+}
+
+.export-import-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid #e6e6e6;
+    text-align: right;
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: auto;
+}
+
+footer p {
+    margin-bottom: 5px;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .mood-buttons {
+        flex-direction: column;
+    }
+    
+    .mood-btn {
+        width: 100%;
+    }
+    
+    .book-card {
+        flex-direction: column;
+    }
+    
+    .book-color-bar {
+        width: 100%;
+        height: 8px;
+    }
+    
+    .book-actions {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .rating-container {
+        margin-bottom: 10px;
+    }
+}
